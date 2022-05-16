@@ -1,6 +1,5 @@
 # spec/items/index_spec.rb
 require 'rails_helper'
-require 'capybara'
 
 RSpec.describe 'Items index view', type: :feature do
   it 'shows all items regardless of warehouse location' do
