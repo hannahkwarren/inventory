@@ -1,0 +1,14 @@
+<h1>Create a New Item</h1>
+
+<%= form_with model: @item, local: true do |f| %>
+  <%= f.label :name, "Item Name: " %>
+  <%= f.text_field :name, id: :name %>
+
+  <%= f.label :description, "Item Description:" %>
+  <%= f.text_field :description, id: :description %>
+
+  <%= f.label :weight_lbs, "Weight (In Pounds):" %>
+  <%= f.number_field :weight_lbs, step: :any %>
+  
+  <%= f.submit "Create Item" %>
+<% end %>
