@@ -1,0 +1,14 @@
+<h1>Edit Item <%= @item.id %></h1>
+
+<%= form_with model: @item, local: true do |f| %>
+  <%= f.label :name, 'Item Name: ' %>
+  <%= f.text_field :name, id: :name, value: @item.name %>
+
+  <%= f.label :description, 'Item Description: ' %>
+  <%= f.text_field :description, value: @item.description %>
+
+  <%= f.label :weight_lbs, "Weight (In Pounds): " %>
+  <%= f.number_field :weight_lbs, step: :any, value: @item.description %>
+
+  <%= f.submit 'Save Changes' %>
+  <% end %>
