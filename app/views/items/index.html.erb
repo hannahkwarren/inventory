@@ -1,0 +1,9 @@
+<h1>Items</h1>
+
+<% @items.each do |item| %>
+  <div class="item-<%=item.id %>">
+    <h2><%= link_to "Item: #{item.name}", "items/#{item.id}" %></h2>
+    <p><%= "Item Description: #{item.description} " %><p>
+    <p><%= "Item Weight, Pounds: #{item.weight_lbs}" %><p>
+  <div>
+<% end %>
