@@ -1,0 +1,21 @@
+<h1>Create a New Warehouse Facility</h1>
+
+<%= form_with model: @warehouse, local: true do |f| %>
+  <%= f.label :name, "Warehouse Name: " %>
+  <%= f.text_field :name, id: :name %>
+
+  <%= f.label :address, "Warehouse Address: " %>
+  <%= f.text_field :address, id: :address %>
+
+  <%= f.label :city, "City: " %>
+  <%= f.text_field :city, id: :city %>
+
+  <%= f.label :state, "State: " %>
+  <%= f.text_field :state, id: :state %>
+
+  <%= f.label :zip, "Zip: " %>
+  <%= f.text_field :zip, id: :zip %>
+
+  <%= f.submit "Create Warehouse" %>
+
+<% end %>
