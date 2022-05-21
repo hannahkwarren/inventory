@@ -16,4 +16,7 @@ RSpec.describe 'Items show page' do
     expect(page).to_not have_content('Description: Silver')
     expect(page).to_not have_content('Weight: 0.2 lbs')
   end
+
+  
+
 end

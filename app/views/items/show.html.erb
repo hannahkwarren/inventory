@@ -4,6 +4,6 @@
 <h3>Description: <%= @item.description %></h3>
 <p>Weight: <%= @item.weight_lbs %> lbs</p>
 
-<div class = delete>
+<div class="delete-<%= @item.id %>">
   <%= button_to "Delete This Item", item_path(:id => @item.id), method: :delete %>
 <div>

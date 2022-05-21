@@ -1,9 +1,11 @@
 <h1>All Warehouse Locations</h1>
 
-<%= @warehouses.each do |warehouse| %>
+<% @warehouses.each do |warehouse| %>
   <div class="warehouse-<%= "#{warehouse.id}" %>">
-    <ul><%= warehouse.name %></ul>
+    <ul>
+    <li><h3><%= warehouse.name %></h3></li>
       <p><%= warehouse.address %> <%= warehouse.city %>, <%= warehouse.state %> <%= warehouse.zip %></p>
+    </ul>
     <% end %>
   </div>
 

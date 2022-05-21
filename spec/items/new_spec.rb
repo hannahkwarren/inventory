@@ -16,5 +16,4 @@ RSpec.describe 'New Item form', type: :feature do
     expect(page).to have_content('Description: Neon Pink')
     expect(page).to have_content('Weight: 0.5 lbs')
   end
-
 end

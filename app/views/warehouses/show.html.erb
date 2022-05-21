@@ -1,0 +1,5 @@
+<h1>Warehouse Location: <%= @warehouse.name %> </h1>
+
+<h2><%= @warehouse.address %> <%= @warehouse.city %>, <%= @warehouse.state %> <%= @warehouse.zip %></h2>
+
+<h3><%= link_to "Add Inventory at #{@warehouse.name}", new_warehouse_item_path(warehouse_id: @warehouse.id, warehouse_name: @warehouse.name), method: :get %></h3>

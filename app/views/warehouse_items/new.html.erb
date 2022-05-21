@@ -1,0 +1,18 @@
+<h1> Add Item to Inventory, Warehouse: <%= params[:warehouse_name] %> </h1>
+
+<%= form_with model: @warehouse_item, local: true do |f| %>
+  <%= f.label :warehouse_id, 'Warehouse Location:' %>
+  <%= f.text_field :warehouse_id, :placeholder => params[:warehouse_id], :value => params[:warehouse_id] %>
+
+  <%= f.label :item_id, 'Item:' %>
+  <%= f.select :item_id, options_for_select(Item.all.map { |i| [i.full_name, i.id] }), id: :item_id %>
+
+  <%= f.label :quantity, "Item Quantity:" %>
+  <%= f.number_field :quantity, min: 1, step: 1, id: :quantity %>
+
+  <%= f.label :aisle, 'Aisle Location' %>
+  <%= f.number_field :aisle, min: 1, step: 1, id: :aisle %>
+
+  <%= f.submit "Add Inventory to Warehouse" %>
+<% end %>
+
