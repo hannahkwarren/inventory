@@ -3,3 +3,11 @@
 <h2><%= @warehouse.address %> <%= @warehouse.city %>, <%= @warehouse.state %> <%= @warehouse.zip %></h2>
 
 <h3><%= link_to "Add Inventory at #{@warehouse.name}", new_warehouse_item_path(warehouse_id: @warehouse.id, warehouse_name: @warehouse.name), method: :get %></h3>
+
+<h3>Inventory at this Warehouse:</h3>
+
+<%= @warehouse.warehouse_items.each do |wi| %>
+  <h4>Item No. <%= wi.item_id %>, <%= wi.item.name %>, <%=wi.item.description %></h4>
+  <p>Per-Item Weight: <%= wi.item.weight_lbs %> lbs</p>
+  <p>Item Quantity: <%= wi.quantity %></p>
+<% end %>
