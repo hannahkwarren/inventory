@@ -10,6 +10,7 @@
   </head>
 
   <body>
+      <p><%= link_to "Items", items_path %> | <%= link_to "Warehouses", warehouses_path %></p>
       <% flash.each do |type, msg| %>
         <div>
           <%= msg %>
