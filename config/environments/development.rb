@@ -11,6 +11,9 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  
+  config.hosts << "14322445-8a7d-4f28-af8a-c56ec821dfe3.id.repl.co"
+  config.hosts << "inventory.hannahwarren.repl.co"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
