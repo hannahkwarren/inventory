@@ -5,10 +5,10 @@
   <%= f.text_field :name, id: :name, value: @item.name %>
 
   <%= f.label :description, 'Item Description: ' %>
-  <%= f.text_field :description, value: @item.description %>
+  <%= f.text_field :description, value: @item.description, id: :description %>
 
   <%= f.label :weight_lbs, "Weight (In Pounds): " %>
-  <%= f.number_field :weight_lbs, step: :any, value: @item.description %>
+  <%= f.number_field :weight_lbs, step: :any, value: @item.description, id: :weight_lbs %>
 
   <%= f.submit 'Save Changes' %>
   <% end %>

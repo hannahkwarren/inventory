@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe 'Inventory (warehouse_items) create', type: :feature do
   it 'can add item inventory to a warehouse location' do
-    item1 = Item.create(name: 'Logitech MX Anywhere Mouse', description: 'Powder Pink', weight_lbs: 0.2)
+    Item.create(name: 'Logitech MX Anywhere Mouse', description: 'Powder Pink', weight_lbs: 0.2)
     warehouse1 = Warehouse.create(name: 'Smaller Zon Competitor',
                                   address: '123 Main Street',
                                   city: 'Syracuse',
@@ -19,7 +19,7 @@ RSpec.describe 'Inventory (warehouse_items) create', type: :feature do
 
     click_button 'Add Inventory to Warehouse'
 
-    expect(current_path).to eq(inventory_path)
+    expect(current_path).to eq(warehouse_path(warehouse1))
     expect(page).to have_content(warehouse1.name)
     expect(page).to have_content('Logitech MX Anywhere Mouse')
     expect(page).to have_content('100')

@@ -19,8 +19,7 @@ class ItemsController < ApplicationController
       flash[:success] = "#{@item.name} created!"
       redirect_to item_path(@item)
     else
-      flash[:alert] = "Error: #{error_message(@item.errors)}"
-      redirect_to new_item_path
+      redirect_to new_item_path, notice: @item.errors.full_messages.to_sentence
     end
   end
 

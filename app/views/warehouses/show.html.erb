@@ -6,8 +6,10 @@
 
 <h3>Inventory at this Warehouse:</h3>
 
-<%= @warehouse.warehouse_items.each do |wi| %>
-  <h4>Item No. <%= wi.item_id %>, <%= wi.item.name %>, <%=wi.item.description %></h4>
+<% @warehouse.warehouse_items.each do |wi| %>
+<ul>
+  <li><h4>Item No. <%= wi.item_id %>, <%= wi.item.name %>, <%=wi.item.description %></h4></li>
   <p>Per-Item Weight: <%= wi.item.weight_lbs %> lbs</p>
   <p>Item Quantity: <%= wi.quantity %></p>
+</ul>
 <% end %>

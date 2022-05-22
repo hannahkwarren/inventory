@@ -1,5 +1,4 @@
 # app/controllers/warehouses_controller.rb
-
 class WarehousesController < ApplicationController
   def index
     @warehouses = Warehouse.all
@@ -15,8 +14,7 @@ class WarehousesController < ApplicationController
       flash[:success] = 'Warehouse location created!'
       redirect_to warehouses_path
     else
-      flash[:alert] = 'Error, please try again.'
-      render new_warehouse_path
+      render new_warehouse_path, notice: @warehouse.errors.full_messages.to_sentence
     end
   end
 
@@ -25,6 +23,7 @@ class WarehousesController < ApplicationController
   end
 
   private
+
   def warehouse_params
     params.require(:warehouse).permit(:name, :address, :city, :state, :zip)
   end

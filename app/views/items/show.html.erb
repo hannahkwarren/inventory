@@ -1,9 +1,16 @@
+<%= link_to "Return to Items Index", items_path, method: :get %>
+
 <h1>Item: <%= @item.name %></h1>
 
 <h2>Details:</h2>
 <h3>Description: <%= @item.description %></h3>
 <p>Weight: <%= @item.weight_lbs %> lbs</p>
 
+<div class="edit-<%= @item.id %>">
+  <%= button_to "Edit This Item", edit_item_path(@item), method: :get %>
+<div>
+
 <div class="delete-<%= @item.id %>">
   <%= button_to "Delete This Item", item_path(:id => @item.id), method: :delete %>
 <div>
+

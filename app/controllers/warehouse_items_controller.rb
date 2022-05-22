@@ -10,15 +10,13 @@ class WarehouseItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @warehouse_item = WarehouseItem.create(warehouse_item_params)
 
     if @warehouse_item.save
-      flash[:success] = "#{@warehouse_item.id} created!"
-      redirect_to inventory_path
+      flash[:success] = "#{@warehouse_item.item.name} inventory created!"
+      redirect_to warehouse_path(@warehouse_item.warehouse)
     else
-      flash[:alert] = "Error: #{error_message(@warehouse_item.errors)}"
-      redirect_to new_warehouse_item_path
+      redirect_to new_warehouse_item_path, notice: @warehouse_item.errors.full_messages.to_sentence
     end
   end
 
