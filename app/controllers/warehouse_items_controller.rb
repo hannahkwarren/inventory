@@ -1,4 +1,6 @@
-# app/controlelrs/warehouse_items_controller.rb
+# frozen_string_literal: true
+
+# app/controllers/warehouse_items_controller.rb
 
 class WarehouseItemsController < ApplicationController
   def index
